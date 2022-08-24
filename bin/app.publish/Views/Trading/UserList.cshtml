@@ -1,0 +1,155 @@
+﻿@model IEnumerable<AngelOneAdmin.Models.User>
+@{
+    ViewBag.Title = "User List";
+}
+
+<style>
+    .table {
+        font-size: 14px;
+    }
+    .inlineDiv {
+        margin-right: 10px;
+        display: inline;
+    }
+</style>
+<input type="button" value="Add New User" onclick="OpenModel()" class="btn btn-primary" style="margin-bottom:15px" />
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">UserId</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Angel User</th>
+            <th scope="col">Balance Amount</th>
+            <th scope="col">Active</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.id</td>
+                <td>@item.userId</td>
+                <td>@item.email</td>
+                <td>@item.Phone</td>
+                <td>@item.angel_user</td>
+                <td>@item.balance_amount</td>
+                <td>@item.active</td>
+            </tr>
+        }
+
+    </tbody>
+
+</table>
+
+<div class="modal" id="addModel" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add User</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">User Id</label>
+                    <input type="text" class="form-control" id="UserId" aria-describedby="emailHelp" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" id="Password" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email</label>
+                    <input type="email" class="form-control" id="Email" aria-describedby="emailHelp" placeholder="">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Phone</label>
+                    <input type="text" class="form-control" id="Phone" aria-describedby="emailHelp" placeholder="">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Angel User</label>
+                    <input type="text" class="form-control" id="AngelUser" aria-describedby="emailHelp" placeholder="">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Angel Password</label>
+                    <input type="password" class="form-control" id="AngelPassword" placeholder="">
+                </div>
+
+                <div class="form-check inlineDiv">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2"  value="N" checked>
+                    <label class="form-check-label" for="exampleRadios2">
+                        Not Active
+                    </label>
+                </div>
+
+                <div class="form-check inlineDiv">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="Y">
+                    <label class="form-check-label" for="exampleRadios1">
+                        Active
+                    </label>
+                </div>
+
+
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="AddUserData()">Save changes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+
+    <script>
+        function OpenModel()
+        {
+            $("#addModel").modal('show');
+
+        }
+
+        function AddUserData() {
+            var UserId = $("#UserId").val();
+            var Password = $("#Password").val();
+            var Email = $("#Email").val();
+            var Phone = $("#Phone").val();
+            var AngelUser = $("#AngelUser").val();
+            var AngelPassword = $("#AngelPassword").val();
+            var ActiveValue = $("input[name='exampleRadios']:checked").val();
+           
+            var UserData = { "userId": UserId, "password": Password, "email": Email, "Phone": Phone, "angel_user": AngelUser, "angel_password": AngelPassword, "active": ActiveValue };
+
+            $.ajax({
+                url: "/Trading/AddUserDetail",
+                type: "post",
+                data: { "AddUserModel": UserData },
+                success: function (data) {
+                    
+                    alert("Data inserted successfully");
+                    $("#addModel").modal('hide');
+                    window.location.reload();
+                }
+            });
+        }
+
+        
+
+
+    </script>
+
+}

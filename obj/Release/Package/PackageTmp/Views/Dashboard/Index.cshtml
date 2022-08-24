@@ -1,0 +1,203 @@
+﻿@model AngelOneAdmin.ViewModels.DashboardViewModel
+@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<style>
+    .timecolor {
+        color: blue;
+    }
+</style>
+
+<div class="row">
+
+    <!-- Earnings (Monthly) Card Example -->
+    <div class="col-xl-6 col-md-6 mb-4">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1" style="font-size:13px">
+                            Nifty Index
+                        </div>
+
+                        <div id="NiftyIndexClosePrice" class="mb-0 font-weight-bold text-gray-800" style="font-size:14px">Close Price :</div>
+
+                        <div id="NiftyIndexDate" class="mb-0 font-weight-bold text-gray-800" style="font-size:14px">Date        : </div>
+                        <div id="NiftyIndexTime" class="mb-0 font-weight-bold text-blue-800 timecolor" style="font-size: 14px">Time        : </div>
+                    </div>
+                    @*<div class="col-auto">
+                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                        </div>*@
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pending Requests Card Example -->
+    <div class="col-xl-6 col-md-6 mb-4">
+        <div class="card border-left-warning shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1" style="font-size:13px">
+                            Bank Nifty
+                        </div>
+                        <div id="BankNiftyClosePrice" class="mb-0 font-weight-bold text-gray-800" style="font-size:14px">Close Price : </div>
+
+                        <div id="BankNiftyDate" class="mb-0 font-weight-bold text-gray-800" style="font-size:14px">Date        : </div>
+                        <div id="BankNiftyTime" class="mb-0 font-weight-bold text-blue-800 timecolor " style="font-size:14px">Time        : </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Earnings (Monthly) Card Example -->
+    <div class="col-xl-6 col-md-6 mb-4">
+        <div class="card border-left-success shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1" style="font-size:13px">
+                            Bank Nifty
+                        </div>
+
+                        <table id="BankNiftyTable" class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Index Name</th>
+                                    <th scope="col">Price</th>
+                                    <th scope="col">Created By</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @*@foreach (var item in Model.BankNifty)
+                                {*@
+                                    @*<tr>
+                                        <td><div class="mb-0 font-weight-bold text-gray-800" style="font-size:14px"></div></td>
+                                        <td><div class="mb-0 font-weight-bold text-gray-800" style="font-size:14px"></div></td>
+                                        <td><div class="mb-0 font-weight-bold text-blue-800 timecolor" style="font-size:14px"></div></td>
+                                    </tr>*@
+
+                                @*}*@
+
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Earnings (Monthly) Card Example -->
+    <div class="col-xl-6 col-md-6 mb-4">
+        <div class="card border-left-info shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1" style="font-size:13px">
+                            Trading Index
+                        </div>
+
+
+                        <table id="TradingIndexTable" class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Index Name</th>
+                                    <th scope="col">Price</th>
+                                    <th scope="col">Created By</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @*@foreach (var item in Model.Trading)
+                                {*@
+                                    @*<tr>
+                                        <td><div class="mb-0 font-weight-bold text-gray-800" style="font-size:14px"></div></td>
+                                        <td><div class="mb-0 font-weight-bold text-gray-800" style="font-size:14px"></div></td>
+                                        <td><div class="mb-0 font-weight-bold text-blue-800 timecolor" style="font-size:14px"></div></td>
+                                    </tr>*@
+
+
+                                @*}*@
+
+
+                            </tbody>
+                        </table>
+
+
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<!-- Content Row -->
+
+@section scripts{
+    <script>
+
+
+        $(document).ready(function () {
+            getData();
+            setInterval(function () {
+                getData();
+            },5000)
+        });
+        function getData() {
+
+
+            $.ajax({
+                url: "/Dashboard/GetDashboardData",
+                type: "get",
+                dataType: "json",
+                success: function (data) {
+                    $('#BankNiftyTable tbody').empty();
+                    $('#TradingIndexTable tbody').empty();
+                    $("#NiftyIndexClosePrice").html("");
+                    $("#NiftyIndexDate").html("");
+                    $("#NiftyIndexTime").html("");
+                    $("#BankNiftyClosePrice").html("");
+                    $("#BankNiftyDate").html("");
+                    $("#BankNiftyTime").html("");
+                  
+                 
+                    $("#NiftyIndexClosePrice").html("Close Price :"+data.NiftyIndexClosePrice);
+                    $("#NiftyIndexDate").html("Date :" + data.NiftyINdexTimeString);
+                    $("#NiftyIndexTime").html("Time :" + data.NiftyTime);
+
+                    $("#BankNiftyClosePrice").html("Close Price :" + data.BannkNiftyIndexClosePrice);
+                    $("#BankNiftyDate").html("Date :" + data.BankNiftyINdexTimeString);
+                    $("#BankNiftyTime").html("Time :" + data.BankNiftyTime);
+
+
+                    $.each(data.BankNifty, function (index, item) {
+                        
+                        $("#BankNiftyTable tbody").append('<tr><td><div class="mb-0 font-weight-bold text-gray-800" style="font-size:14px">' + item.indexName + '</div></td><td><div class="mb-0 font-weight-bold text-gray-800" style="font-size:14px">' + item.price + '</div></td><td><div class="mb-0 font-weight-bold text-gray-800" style="font-size:14px">' + item.BankNiftyToString + '</div></td></tr>');
+                        console.log(item);
+                    });
+
+                    $.each(data.Trading, function (index, item) {
+                        
+                        $("#TradingIndexTable tbody").append('<tr><td><div class="mb-0 font-weight-bold text-gray-800" style="font-size:14px">' + item.indexName + '</div></td><td><div class="mb-0 font-weight-bold text-gray-800" style="font-size:14px">' + item.price + '</div></td><td><div class="mb-0 font-weight-bold text-gray-800" style="font-size:14px">' + item.TradingToString + '</div></td></tr>');
+                        console.log(item);
+                    });
+
+
+                }
+            });
+        }
+    </script>
+
+}

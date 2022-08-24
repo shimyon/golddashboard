@@ -1,0 +1,79 @@
+﻿@model IEnumerable<AngelOneAdmin.ViewModels.TradeBookViewModel>
+@{
+    ViewBag.Title = "Trade Book";
+}
+
+
+
+<style>
+    .table {
+        font-size: 14px;
+    }
+</style>
+<table class="table table-striped" id="TradeBookTbl">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">ClientId</th>
+            <th scope="col">tradingSymbol </th>
+            <th scope="col">buyQty</th>
+            <th scope="col">sellQty</th>
+            <th scope="col">Balance</th>
+            <th scope="col">CurrentPrice</th>
+            <th scope="col">StopLoss</th>
+            <th scope="col">Add Record</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            var balance = item.buyQty - item.sellQty;
+        <tr>
+            <td>@item.id</td>
+            <td>@item.clientId</td>
+            <td>@item.tradingSymbol</td>
+            <td>@item.buyQty</td>
+            <td>@item.sellQty</td>
+            <td>@balance</td>
+            <td>@item.currentPrice</td>
+            <td>@item.stopLoss</td>
+            <td><button class="tradeEntries" value="Add">Add</button></td>
+        </tr>
+        }
+
+    </tbody>
+</table>
+
+
+@section scripts{
+    <script>
+        $("#TradeBookTbl").on('click', '.tradeEntries', function () {
+            var currentRow = $(this).closest("tr");
+
+            var col1 = currentRow.find("td:eq(0)").text(); 
+            var col2 = currentRow.find("td:eq(1)").text(); 
+            var col3 = currentRow.find("td:eq(2)").text();
+            var col4 = currentRow.find("td:eq(3)").text();
+            var col5 = currentRow.find("td:eq(4)").text();
+            var possible = "0123456789"
+            var text = "";
+            for (var i = 0; i < 15; i++) {
+                text += possible.charAt(Math.floor(Math.random() * possible.length));
+            }
+            var model = { "id": col1, "orderId": text, "clientId": col2, "tradingSymbol": col3, "buyQty": col4, "sellQty": col5 };
+
+            debugger
+            $.ajax({
+                url: "/Trading/AddTradeBookRecord",
+                type: "post",
+                data: { "TradeBookModel": model },
+                success: function () {
+                    alert("Data inserted sucessfully");
+                    location.reload();
+                }
+            });
+        })
+
+    </script>
+
+}
