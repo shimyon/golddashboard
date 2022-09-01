@@ -7,7 +7,7 @@ namespace AngelOneAdmin.ViewModels
 {
     public class AddUserViewModel
     {
-
+        public int Id { get; set; }
         public string userId { get; set; }
         public string password { get; set; }
         public string email { get; set; }

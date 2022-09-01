@@ -14,16 +14,16 @@ function getData() {
         type: "get",
         dataType: "json",
         success: function (data) {
-            debugger
-            $("#indexPrise").html("");
-            $("#indexDate").html("");
-            $("#BankNiftyIndex").html("");
-            $("#BankNiftyDate").html("");
 
-            $("#indexPrise").html("Nifty Index :" + data.NiftyIndexClosePrice);
-            $("#indexDate").html(data.NiftyTime);
-            $("#BankNiftyIndex").html("Bank Nifty:" + data.BannkNiftyIndexClosePrice);
-            $("#BankNiftyDate").html( data.BankNiftyTime);
+            $("#LayoutindexPrise").html("");
+            $("#LayoutindexDate").html("");
+            $("#LayoutBankNiftyIndex").html("");
+            $("#LayoutBankNiftyDate").html("");
+
+            $("#LayoutindexPrise").html("Nifty Index : " + data.NiftyIndexClosePrice);
+            $("#LayoutindexDate").html(data.NiftyTime);
+            $("#LayoutBankNiftyIndex").html("Bank Nifty : " + data.BannkNiftyIndexClosePrice);
+            $("#LayoutBankNiftyDate").html( data.BankNiftyTime);
         }
     });
 }

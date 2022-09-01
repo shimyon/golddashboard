@@ -10,6 +10,8 @@ namespace AngelOneAdmin.ViewModels
         public int id { get; set; }
         public long orderId { get; set; }
         public string clientId { get; set; }
+        public string firstName { get; set; }
+        public string lastName { get; set; }
         public string tradingSymbol { get; set; }
         public int buyQty { get; set; }
         public int sellQty { get; set; }

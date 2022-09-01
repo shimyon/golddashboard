@@ -16,6 +16,9 @@ namespace AngelOneAdmin.Models
         public Int32 id { get; set; }
         public string userId { get; set; }
         public string password { get; set; }
+        public string firstName { get; set; }
+        public string middleName { get; set; }
+        public string lastName { get; set; }
         public string email { get; set; }
         public Int64? Phone { get; set; }
         public string angel_user { get; set; }

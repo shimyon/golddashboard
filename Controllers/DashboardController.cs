@@ -42,7 +42,7 @@ namespace AngelOneAdmin.Controllers
             foreach (var item in CallBankNiftySp)
             {
                 BankNifty bankNiftyModel = new BankNifty();
-                bankNiftyModel.indexName = item.indexName;
+                bankNiftyModel.indexName = item.indexName.Remove(0,9); 
                 bankNiftyModel.price = item.price;
                 bankNiftyModel.createby = item.createby;
                 NiftyModel.Add(bankNiftyModel);
@@ -52,7 +52,7 @@ namespace AngelOneAdmin.Controllers
             foreach (var item in CallTradingIndexSp)
             {
                 Trading TradingModel = new Trading();
-                TradingModel.indexName = item.indexName;
+                TradingModel.indexName = item.indexName.Remove(0,5);
                 TradingModel.price = item.price;
                 TradingModel.createby = item.createby;
                 TradingListModel.Add(TradingModel);
@@ -60,11 +60,6 @@ namespace AngelOneAdmin.Controllers
             model.BankNifty = NiftyModel;
             model.Trading = TradingListModel;
 
-
-            Session["NiftyIndexPrice"] = model.NiftyIndexClosePrice;
-            Session["NiftyTime"] = model.NiftyTime;
-            Session["BankNiftyIndexPrice"] = model.BannkNiftyIndexClosePrice;
-            Session["BankNiftyTime"] = model.BankNiftyTime;
 
             return Json(model, JsonRequestBehavior.AllowGet);
         }

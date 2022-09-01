@@ -21,6 +21,7 @@ namespace AngelOneAdmin.Models
         public DbSet<ManualTrading> ManualTrading { get; set; }
         public DbSet<BankNiftyIndex> BankNiftyIndex { get; set; }
         public DbSet<TradeBook> TradeBook { get; set; }
+        public DbSet<Setting> Settings { get; set; }
 
     }
 }

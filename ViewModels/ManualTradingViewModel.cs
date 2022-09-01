@@ -8,8 +8,10 @@ namespace AngelOneAdmin.ViewModels
     public class ManualTradingViewModel
     {
         public string IndexName { get; set; }
+        public string TokenSymbol { get; set; }
         public decimal Price { get; set; }
         public int LotSize { get; set; }
         public string TrasactionType { get; set; }
+        public List<string> SelectedUser { get; set; }
     }
 }
