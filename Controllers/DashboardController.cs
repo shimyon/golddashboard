@@ -1,67 +1,48 @@
-﻿using AngelOneAdmin.Models;
-using AngelOneAdmin.ViewModels;
+﻿using GoldDashboard.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
-namespace AngelOneAdmin.Controllers
+namespace GoldDashboard.Controllers
 {
+    [Authorize]
     public class DashboardController : Controller
     {
+        private ApplicationUserManager _userManager;
         // GET: Dashboard
-
-        // GET: Angel
-        AppDb _context = new AppDb();
-
-        public ActionResult Index()
+        public DashboardController()
         {
-            return View();
+
         }
-        public ActionResult GetDashboardData()
+        public DashboardController(ApplicationUserManager userManager)
         {
-
-            DashboardViewModel model = new DashboardViewModel();
-
-            var LastNiftyIndex = _context.NiftyINdex.OrderByDescending(e => e.id).Select(e => new {e.close_price, e.index_time }).FirstOrDefault();
-            model.NiftyIndexClosePrice = LastNiftyIndex.close_price;
-            model.NiftyIndexTime = LastNiftyIndex.index_time.Date;
-            model.NiftyTime = LastNiftyIndex.index_time.TimeOfDay.ToString();
-            
-
-            var LastBankNiftyIndex = _context.BankNiftyIndex.OrderByDescending(e => e.id).Select(e => new { e.close_price, e.index_time }).FirstOrDefault();
-            model.BannkNiftyIndexClosePrice = LastBankNiftyIndex.close_price;
-            model.BannkNiftyIndexTime = LastBankNiftyIndex.index_time.Date;
-            model.BankNiftyTime = LastBankNiftyIndex.index_time.TimeOfDay.ToString();
-      
-
-            var CallBankNiftySp =_context.Database.SqlQuery<BankNifty>("call spGetBankNiftyIndex").Select(e => new BankNifty { indexName= e.indexName, price= e.price, createby=e.createby }).ToList();
-            var CallTradingIndexSp = _context.Database.SqlQuery<Trading>("call spGetTradingIndex").Select(e => new Trading {indexName= e.indexName, price= e.price, createby=e.createby }).ToList();
-            List<BankNifty> NiftyModel = new List<BankNifty>();
-            foreach (var item in CallBankNiftySp)
+            UserManager = userManager;
+        }
+        public ApplicationUserManager UserManager
+        {
+            get
             {
-                BankNifty bankNiftyModel = new BankNifty();
-                bankNiftyModel.indexName = item.indexName.Remove(0,9); 
-                bankNiftyModel.price = item.price;
-                bankNiftyModel.createby = item.createby;
-                NiftyModel.Add(bankNiftyModel);
+                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
             }
-
-            List<Trading> TradingListModel = new List<Trading>();
-            foreach (var item in CallTradingIndexSp)
+            private set
             {
-                Trading TradingModel = new Trading();
-                TradingModel.indexName = item.indexName.Remove(0,5);
-                TradingModel.price = item.price;
-                TradingModel.createby = item.createby;
-                TradingListModel.Add(TradingModel);
+                _userManager = value;
             }
-            model.BankNifty = NiftyModel;
-            model.Trading = TradingListModel;
+        }
 
 
-            return Json(model, JsonRequestBehavior.AllowGet);
+        public async Task<ActionResult> Index()
+        {
+            AppDb context = new AppDb();
+            var currentRate = context.setting.FirstOrDefault();
+            AppUsers userid = await UserManager.FindByIdAsync(User.Identity.GetUserId());
+            userid.USD_Rate = currentRate.CurrencyPrice;
+            return View(userid);
         }
     }
 }

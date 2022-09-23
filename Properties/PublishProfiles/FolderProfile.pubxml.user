@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <_PublishTargetUrl>D:\project\AngelOneAdmin\AngelOneAdmin\AngelOneAdmin\bin\app.publish\</_PublishTargetUrl>
-    <History>True|2022-08-31T07:22:06.5659587Z;True|2022-08-26T19:01:57.5447606+05:30;True|2022-08-26T19:01:46.3995633+05:30;True|2022-08-24T14:58:16.7815026+05:30;True|2022-08-23T17:23:47.8006765+05:30;True|2022-08-23T13:58:30.9307504+05:30;True|2022-08-23T13:52:08.3986347+05:30;</History>
+    <History>True|2022-09-09T09:48:08.3661637Z;True|2022-09-05T11:05:42.2733767+05:30;True|2022-09-01T13:37:14.0116347+05:30;True|2022-08-31T12:52:06.5659587+05:30;True|2022-08-26T19:01:57.5447606+05:30;True|2022-08-26T19:01:46.3995633+05:30;True|2022-08-24T14:58:16.7815026+05:30;True|2022-08-23T17:23:47.8006765+05:30;True|2022-08-23T13:58:30.9307504+05:30;True|2022-08-23T13:52:08.3986347+05:30;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="AdminKit/build/config/.eslintrc.json">
@@ -7206,10 +7206,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>08/29/2022 11:07:43</publishTime>
     </File>
     <File Include="bin/AngelOneAdmin.dll">
-      <publishTime>09/01/2022 11:09:48</publishTime>
+      <publishTime>09/13/2022 12:05:30</publishTime>
     </File>
     <File Include="bin/AngelOneAdmin.pdb">
-      <publishTime>09/01/2022 11:09:48</publishTime>
+      <publishTime>09/13/2022 12:05:30</publishTime>
     </File>
     <File Include="bin/Antlr3.Runtime.dll">
       <publishTime>09/10/2013 16:29:20</publishTime>
@@ -7240,6 +7240,15 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     </File>
     <File Include="bin/K4os.Hash.xxHash.dll">
       <publishTime>07/04/2019 02:09:02</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
+      <publishTime>11/25/2019 16:27:50</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.EntityFramework.dll">
+      <publishTime>11/25/2019 16:27:50</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.Owin.dll">
+      <publishTime>11/25/2019 16:27:50</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNetCore.Antiforgery.dll">
       <publishTime>11/12/2018 23:03:18</publishTime>
@@ -7442,6 +7451,18 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="bin/Microsoft.Net.Http.Headers.dll">
       <publishTime>11/12/2018 22:58:58</publishTime>
     </File>
+    <File Include="bin/Microsoft.Owin.dll">
+      <publishTime>02/13/2015 18:46:30</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Cookies.dll">
+      <publishTime>02/13/2015 18:46:38</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.dll">
+      <publishTime>02/13/2015 18:46:36</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.OAuth.dll">
+      <publishTime>02/13/2015 18:46:40</publishTime>
+    </File>
     <File Include="bin/Microsoft.Web.Infrastructure.dll">
       <publishTime>07/25/2012 11:48:56</publishTime>
     </File>
@@ -7468,6 +7489,9 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
       <publishTime>04/22/2019 01:06:16</publishTime>
+    </File>
+    <File Include="bin/Owin.dll">
+      <publishTime>11/13/2012 17:49:34</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
       <publishTime>08/08/2018 05:38:48</publishTime>
@@ -8015,6 +8039,129 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="Content/Site.css">
       <publishTime>08/19/2022 14:18:09</publishTime>
     </File>
+    <File Include="Content/themes/base/accordion.css">
+      <publishTime>09/05/2022 15:54:39</publishTime>
+    </File>
+    <File Include="Content/themes/base/all.css">
+      <publishTime>09/05/2022 15:54:39</publishTime>
+    </File>
+    <File Include="Content/themes/base/autocomplete.css">
+      <publishTime>09/05/2022 15:54:38</publishTime>
+    </File>
+    <File Include="Content/themes/base/base.css">
+      <publishTime>09/05/2022 15:54:38</publishTime>
+    </File>
+    <File Include="Content/themes/base/button.css">
+      <publishTime>09/05/2022 15:54:37</publishTime>
+    </File>
+    <File Include="Content/themes/base/core.css">
+      <publishTime>09/05/2022 15:54:37</publishTime>
+    </File>
+    <File Include="Content/themes/base/datepicker.css">
+      <publishTime>09/05/2022 15:54:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/dialog.css">
+      <publishTime>09/05/2022 15:54:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/draggable.css">
+      <publishTime>09/05/2022 15:54:35</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_flat_0_aaaaaa_40x100.png">
+      <publishTime>09/05/2022 15:54:35</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_flat_75_ffffff_40x100.png">
+      <publishTime>09/05/2022 15:54:34</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_glass_55_fbf9ee_1x400.png">
+      <publishTime>09/05/2022 15:54:34</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_glass_65_ffffff_1x400.png">
+      <publishTime>09/05/2022 15:54:34</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_glass_75_dadada_1x400.png">
+      <publishTime>09/05/2022 15:54:33</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_glass_75_e6e6e6_1x400.png">
+      <publishTime>09/05/2022 15:54:33</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_glass_95_fef1ec_1x400.png">
+      <publishTime>09/05/2022 15:54:33</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_highlight-soft_75_cccccc_1x100.png">
+      <publishTime>09/05/2022 15:54:33</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_222222_256x240.png">
+      <publishTime>09/05/2022 15:54:32</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_2e83ff_256x240.png">
+      <publishTime>09/05/2022 15:54:31</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_444444_256x240.png">
+      <publishTime>09/05/2022 15:54:31</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_454545_256x240.png">
+      <publishTime>09/05/2022 15:54:31</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_555555_256x240.png">
+      <publishTime>09/05/2022 15:54:31</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_777620_256x240.png">
+      <publishTime>09/05/2022 15:54:30</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_777777_256x240.png">
+      <publishTime>09/05/2022 15:54:30</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_888888_256x240.png">
+      <publishTime>09/05/2022 15:54:30</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_cc0000_256x240.png">
+      <publishTime>09/05/2022 15:54:30</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_cd0a0a_256x240.png">
+      <publishTime>09/05/2022 15:54:29</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_ffffff_256x240.png">
+      <publishTime>09/05/2022 15:54:29</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery-ui.css">
+      <publishTime>09/05/2022 15:54:29</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery-ui.min.css">
+      <publishTime>09/05/2022 15:54:28</publishTime>
+    </File>
+    <File Include="Content/themes/base/menu.css">
+      <publishTime>09/05/2022 15:54:28</publishTime>
+    </File>
+    <File Include="Content/themes/base/progressbar.css">
+      <publishTime>09/05/2022 15:54:28</publishTime>
+    </File>
+    <File Include="Content/themes/base/resizable.css">
+      <publishTime>09/05/2022 15:54:28</publishTime>
+    </File>
+    <File Include="Content/themes/base/selectable.css">
+      <publishTime>09/05/2022 15:54:27</publishTime>
+    </File>
+    <File Include="Content/themes/base/selectmenu.css">
+      <publishTime>09/05/2022 15:54:27</publishTime>
+    </File>
+    <File Include="Content/themes/base/slider.css">
+      <publishTime>09/05/2022 15:54:27</publishTime>
+    </File>
+    <File Include="Content/themes/base/sortable.css">
+      <publishTime>09/05/2022 15:54:26</publishTime>
+    </File>
+    <File Include="Content/themes/base/spinner.css">
+      <publishTime>09/05/2022 15:54:26</publishTime>
+    </File>
+    <File Include="Content/themes/base/tabs.css">
+      <publishTime>09/05/2022 15:54:26</publishTime>
+    </File>
+    <File Include="Content/themes/base/theme.css">
+      <publishTime>09/05/2022 15:54:25</publishTime>
+    </File>
+    <File Include="Content/themes/base/tooltip.css">
+      <publishTime>09/05/2022 15:54:24</publishTime>
+    </File>
     <File Include="DashboardJSCss/css/bootstrap.min.css">
       <publishTime>08/19/2022 16:16:33</publishTime>
     </File>
@@ -8143,6 +8290,9 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     </File>
     <File Include="Global.asax">
       <publishTime>08/19/2022 14:18:09</publishTime>
+    </File>
+    <File Include="libman.json">
+      <publishTime>09/05/2022 15:50:13</publishTime>
     </File>
     <File Include="Microsoft.DiaSymReader.Native.amd64.dll">
       <publishTime>12/04/2017 23:06:44</publishTime>
@@ -8351,6 +8501,12 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="Scripts/jquery-3.4.1.slim.min.map">
       <publishTime>08/19/2022 14:18:28</publishTime>
     </File>
+    <File Include="Scripts/jquery-ui-1.13.2.js">
+      <publishTime>09/05/2022 15:54:23</publishTime>
+    </File>
+    <File Include="Scripts/jquery-ui-1.13.2.min.js">
+      <publishTime>09/05/2022 15:54:23</publishTime>
+    </File>
     <File Include="Scripts/jquery.validate.js">
       <publishTime>08/19/2022 14:18:37</publishTime>
     </File>
@@ -8415,7 +8571,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>08/19/2022 18:41:23</publishTime>
     </File>
     <File Include="Theme/LoadIndex.js">
-      <publishTime>08/30/2022 14:15:50</publishTime>
+      <publishTime>09/09/2022 10:45:12</publishTime>
     </File>
     <File Include="Theme/scss/navs/_global.scss">
       <publishTime>08/19/2022 18:41:23</publishTime>
@@ -8487,7 +8643,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>08/19/2022 18:41:23</publishTime>
     </File>
     <File Include="Theme/SquareOffAll.js">
-      <publishTime>08/31/2022 17:53:13</publishTime>
+      <publishTime>09/07/2022 12:00:51</publishTime>
     </File>
     <File Include="Theme/vendor/bootstrap/js/bootstrap.bundle.js">
       <publishTime>08/19/2022 18:41:15</publishTime>
@@ -13947,10 +14103,13 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>08/19/2022 15:21:41</publishTime>
     </File>
     <File Include="Views/Dashboard/Index.cshtml">
-      <publishTime>08/30/2022 14:17:36</publishTime>
+      <publishTime>09/09/2022 12:32:33</publishTime>
     </File>
     <File Include="Views/Dashboard/_Layout.cshtml">
       <publishTime>08/19/2022 16:23:01</publishTime>
+    </File>
+    <File Include="Views/Holiday/Index.cshtml">
+      <publishTime>09/09/2022 14:01:26</publishTime>
     </File>
     <File Include="Views/Home/About.cshtml">
       <publishTime>08/19/2022 14:18:09</publishTime>
@@ -13961,11 +14120,20 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="Views/Home/Index.cshtml">
       <publishTime>08/19/2022 14:18:09</publishTime>
     </File>
+    <File Include="Views/Login/Index.cshtml">
+      <publishTime>09/13/2022 10:32:42</publishTime>
+    </File>
+    <File Include="Views/Login/_Layout.cshtml">
+      <publishTime>09/13/2022 11:14:03</publishTime>
+    </File>
+    <File Include="Views/Report/Index.cshtml">
+      <publishTime>09/09/2022 15:17:15</publishTime>
+    </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>08/19/2022 14:18:09</publishTime>
     </File>
     <File Include="Views/Shared/_GenetellaLayout.cshtml">
-      <publishTime>08/31/2022 18:09:26</publishTime>
+      <publishTime>09/09/2022 14:34:49</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
       <publishTime>08/30/2022 12:35:09</publishTime>
@@ -13974,13 +14142,13 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>08/29/2022 17:55:57</publishTime>
     </File>
     <File Include="Views/Trading/GetTradeBook.cshtml">
-      <publishTime>09/01/2022 11:08:29</publishTime>
+      <publishTime>09/12/2022 15:05:19</publishTime>
     </File>
     <File Include="Views/Trading/Index.cshtml">
-      <publishTime>08/31/2022 15:56:44</publishTime>
+      <publishTime>09/12/2022 15:14:35</publishTime>
     </File>
     <File Include="Views/Trading/UserList.cshtml">
-      <publishTime>08/31/2022 12:45:31</publishTime>
+      <publishTime>09/09/2022 13:11:03</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>08/19/2022 14:18:09</publishTime>
@@ -13989,7 +14157,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>08/29/2022 11:18:37</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>09/01/2022 11:09:51</publishTime>
+      <publishTime>09/13/2022 12:05:34</publishTime>
+    </File>
+    <File Include="WebForm1.aspx">
+      <publishTime>09/13/2022 11:08:32</publishTime>
     </File>
   </ItemGroup>
 </Project>

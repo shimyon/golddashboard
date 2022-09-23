@@ -1,27 +1,44 @@
-﻿using MySql.Data.EntityFramework;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using MySql.Data.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Security.Claims;
+using System.Threading.Tasks;
 using System.Web;
 
-namespace AngelOneAdmin.Models
+namespace GoldDashboard.Models
 {
+
     [DbConfigurationType(typeof(MySqlEFConfiguration))]
-    public class AppDb: DbContext
+    public class AppDb: IdentityDbContext<AppUsers>
     {
         public AppDb(): base("name=DefaultConnection")
         {
 
         }
-        
-        public DbSet<NiftyIndex> NiftyINdex { get; set; }
-        public DbSet<User> User { get; set; }
-        public DbSet<tradingindex> TradingIndex { get; set; }
-        public DbSet<ManualTrading> ManualTrading { get; set; }
-        public DbSet<BankNiftyIndex> BankNiftyIndex { get; set; }
-        public DbSet<TradeBook> TradeBook { get; set; }
-        public DbSet<Setting> Settings { get; set; }
+
+        public static AppDb Create()
+        {
+            return new AppDb();
+        }
+        public DbSet<Currency> setting { get; set; }
+
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //{
+        //    base.OnModelCreating(modelBuilder);
+        //    modelBuilder.Ignore<User>();
+        //    modelBuilder.Ignore<NiftyIndex>();
+        //    modelBuilder.Ignore<tradingindex>();
+        //    modelBuilder.Ignore<ManualTrading>();
+        //    modelBuilder.Ignore<BankNiftyIndex>();
+        //    modelBuilder.Ignore<TradeBook>();
+        //    modelBuilder.Ignore<Setting>();
+        //    modelBuilder.Ignore<Holiday>();
+        //}
+
 
     }
 }
