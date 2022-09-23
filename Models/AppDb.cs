@@ -17,7 +17,7 @@ namespace GoldDashboard.Models
     {
         public AppDb(): base("name=DefaultConnection")
         {
-
+            Database.SetInitializer<AppDb>(null);
         }
 
         public static AppDb Create()
