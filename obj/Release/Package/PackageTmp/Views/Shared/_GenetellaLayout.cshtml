@@ -66,6 +66,10 @@
         #Nifty50Up, #Nifty50Down, #BankNiftyUp, #BankNiftyDown {
             display: none;
         }
+
+        .textper {
+            white-space: nowrap;
+        }
         /*    #LayoutindexPrise::after {
             border-image-source: "";
         }*/
@@ -262,7 +266,7 @@
                     </div>
                     <div class="info">
                         <a href="#" class="d-block">@User.Identity.Name</a>
-            
+
                     </div>
                 </div>
 
@@ -442,7 +446,7 @@
         </div>
         <!-- /.content-wrapper -->
         <footer class="main-footer">
-            <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">Emoiss</a>.</strong>
+            <strong>Copyright &copy; @(new DateTime().Year) <a href="https://adminlte.io">Emoiss</a>.</strong>
             All rights reserved.
             <div class="float-right d-none d-sm-inline-block">
                 <b>Version</b> 3.2.0
@@ -490,7 +494,7 @@
     <script src="~/AdminKit/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
     <script src="~/AdminKit/plugins/datatables-buttons/js/buttons.print.min.js"></script>
     <script src="~/AdminKit/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
-   
+
     <!-- ChartJS -->
     <!--<script src="~/AdminKit/plugins/chart.js/Chart.min.js"></script>-->
     <!-- Sparkline -->

@@ -10,7 +10,7 @@ using System.Web;
 
 namespace GoldDashboard.Models
 {
-    public class AppUsers: IdentityUser
+    public class AppUsers : IdentityUser
     {
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<AppUsers> manager)
         {
@@ -26,6 +26,15 @@ namespace GoldDashboard.Models
         public decimal PerDayProfit { get; set; }
         public decimal PerWeekProfit { get; set; }
         public decimal PerMonthProfit { get; set; }
+        public DateTime? DepositDate { get; set; }
+        public string DepositDateStr
+        {
+            get
+            {
+                return DepositDate.HasValue ? DepositDate.Value.ToString("dd MMM yyyy") : string.Empty;
+            }
+        }
+
         public decimal DailyProfit { get; set; }
         public decimal Percent { get; set; }
 
@@ -37,7 +46,7 @@ namespace GoldDashboard.Models
         {
             get
             {
-                return Math.Round(Balance*USD_Rate,2);
+                return Math.Round(Balance * USD_Rate, 2);
             }
         }
         [NotMapped]
@@ -45,7 +54,7 @@ namespace GoldDashboard.Models
         {
             get
             {
-                return Math.Round(Deposit * USD_Rate,2);
+                return Math.Round(Deposit * USD_Rate, 2);
             }
         }
 
@@ -97,7 +106,7 @@ namespace GoldDashboard.Models
         {
             get
             {
-                return Math.Round((ConvertedBalance-ConvertedDeposit)/ TotalWorkignDay,2);
+                return Math.Round((ConvertedBalance - ConvertedDeposit) / TotalWorkignDay, 2);
             }
         }
         [NotMapped]
@@ -105,7 +114,7 @@ namespace GoldDashboard.Models
         {
             get
             {
-                return Math.Round((ConvertedBalance - ConvertedDeposit) / (TotalWorkignDay/7),2);
+                return Math.Round((ConvertedBalance - ConvertedDeposit) / (TotalWorkignDay / 7), 2);
             }
         }
         [NotMapped]
@@ -113,7 +122,7 @@ namespace GoldDashboard.Models
         {
             get
             {
-                return Math.Round((ConvertedBalance - ConvertedDeposit),2);
+                return Math.Round((ConvertedBalance - ConvertedDeposit), 2);
             }
         }
 
@@ -122,7 +131,16 @@ namespace GoldDashboard.Models
         {
             get
             {
-                return Math.Round((ConvertedBalance - ConvertedDeposit)/ConvertedDeposit*100, 2);
+                return Math.Round((ConvertedBalance - ConvertedDeposit) / ConvertedDeposit * 100, 2);
+            }
+        }
+
+        [NotMapped]
+        public decimal TotalProfit
+        {
+            get
+            {
+                return Math.Round((Balance - Deposit), 2);
             }
         }
 

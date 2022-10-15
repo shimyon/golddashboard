@@ -21,7 +21,7 @@
                             <div class="w-100">
                                 <h3 class="mb-4">Sign In</h3>
                             </div>
-                            <div class="w-100">
+                            @*<div class="w-100">
                                 <p class="social-media d-flex justify-content-end">
 
                                     <div id="g_id_onload"
@@ -49,7 +49,7 @@
                                     @*<a href="#" id="googleLogin" class="social-icon d-flex align-items-center justify-content-center"><span class="fa fa-facebook"></span></a>
                                     <a href="#" class="social-icon d-flex align-items-center justify-content-center"><span class="fa fa-twitter"></span></a>*@
                                 </p>
-                            </div>
+                            </div>*@
                         </div>
 
                         @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
@@ -61,27 +61,27 @@
 
                             <div class="form-group">
                                 @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-                                <div class="col-md-10">
+                                <div class="col-md-12">
                                     @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
                                     @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                             <div class="form-group">
                                 @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-                                <div class="col-md-10">
+                                <div class="col-md-12">
                                     @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
                                     @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
                                 </div>
                             </div>
 
-                            <div class="form-group">
+                            @*<div class="form-group">
                                 <div class="col-md-offset-2 col-md-10">
                                     <div class="checkbox">
                                         @Html.CheckBoxFor(m => m.RememberMe)
                                         @Html.LabelFor(m => m.RememberMe)
                                     </div>
                                 </div>
-                            </div>
+                            </div>*@
 
                             <div class="form-group">
                                 <button type="submit" class="form-control btn btn-primary rounded submit px-3">Sign In</button>
@@ -89,10 +89,10 @@
 
 
                         }
-                        <p class="text-center">
+                        @*<p class="text-center">
                             Not a member?
                             @Html.ActionLink("Sign Up", "Register")
-                        </p>
+                        </p>*@
 
                     </div>
                 </div>

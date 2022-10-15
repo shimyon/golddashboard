@@ -659,5 +659,32 @@ D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\obj\Debug\Gol
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\obj\Debug\GoldDashboard.dll
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\obj\Debug\GoldDashboard.pdb
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\obj\Debug\GoldDashboard.csproj.AssemblyReference.cache
+<<<<<<< HEAD
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\obj\Debug\GoldDashboard.Migrations.dailyprofitfieldadded.resources
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\obj\Debug\GoldDashboard.Migrations.minorchanges.resources
+=======
+D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\obj\Debug\GoldDashboard.Migrations.goldusername.resources
+D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\obj\Debug\GoldDashboard.Migrations.currencyAdded.resources
+C:\Projects\NDSir\golddashboard\obj\Debug\GoldDashboard.Migrations.extraprofitfield.resources
+C:\Projects\NDSir\golddashboard\obj\Debug\GoldDashboard.Migrations.goldusername.resources
+C:\Projects\NDSir\golddashboard\obj\Debug\GoldDashboard.Migrations.currencyAdded.resources
+C:\Projects\NDSir\golddashboard\obj\Debug\GoldDashboard.csproj.GenerateResource.cache
+C:\Projects\NDSir\golddashboard\obj\Debug\GoldDashboard.csproj.CoreCompileInputs.cache
+C:\Projects\NDSir\golddashboard\bin\GoldDashboard.dll.config
+C:\Projects\NDSir\golddashboard\bin\GoldDashboard.dll
+C:\Projects\NDSir\golddashboard\bin\GoldDashboard.pdb
+C:\Projects\NDSir\golddashboard\bin\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Projects\NDSir\golddashboard\bin\mscorlib.Polyfill.NET40.dll
+C:\Projects\NDSir\golddashboard\bin\Polyfill.System.Runtime.InteropServices.RuntimeInformation.NET40.dll
+C:\Projects\NDSir\golddashboard\bin\System.Buffers.dll
+C:\Projects\NDSir\golddashboard\bin\System.Memory.dll
+C:\Projects\NDSir\golddashboard\bin\System.Numerics.Vectors.dll
+C:\Projects\NDSir\golddashboard\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Projects\NDSir\golddashboard\bin\System.Threading.Tasks.Extensions.dll
+C:\Projects\NDSir\golddashboard\bin\mscorlib.Polyfill.NET40.xml
+C:\Projects\NDSir\golddashboard\bin\Polyfill.System.Runtime.InteropServices.RuntimeInformation.NET40.xml
+C:\Projects\NDSir\golddashboard\obj\Debug\GoldDashboard.csproj.CopyComplete
+C:\Projects\NDSir\golddashboard\obj\Debug\GoldDashboard.dll
+C:\Projects\NDSir\golddashboard\obj\Debug\GoldDashboard.pdb
+C:\Projects\NDSir\golddashboard\obj\Debug\GoldDashboard.csproj.AssemblyReference.cache
+>>>>>>> c8587e38e8e31a1c6c0e29e17c67ed52161be90b
