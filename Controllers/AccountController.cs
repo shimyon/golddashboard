@@ -171,5 +171,10 @@ namespace GoldDashboard.Controllers
         {
             return View();
         }
+
+        public void Authorize()
+        {
+    
+        }
     }
 }

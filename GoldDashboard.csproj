@@ -280,11 +280,14 @@
     <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.2.2\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    <Reference Include="Microsoft.Owin.Security, Version=4.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.2.2\lib\net45\Microsoft.Owin.Security.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Owin.Security.Cookies, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google, Version=4.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.4.2.2\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
@@ -563,6 +566,14 @@
     <Compile Include="Migrations\202209201008344_currencyAdded.cs" />
     <Compile Include="Migrations\202209201008344_currencyAdded.Designer.cs">
       <DependentUpon>202209201008344_currencyAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202210150624388_dailyprofit field added.cs" />
+    <Compile Include="Migrations\202210150624388_dailyprofit field added.Designer.cs">
+      <DependentUpon>202210150624388_dailyprofit field added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202210150626326_minor-changes.cs" />
+    <Compile Include="Migrations\202210150626326_minor-changes.Designer.cs">
+      <DependentUpon>202210150626326_minor-changes.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppDb.cs" />
@@ -2742,10 +2753,12 @@
     <Content Include="DashboardJSCss\js\morris.min.js" />
     <Content Include="DashboardJSCss\js\raphael.min.js" />
     <Content Include="DashboardJSCss\js\waves.min.js" />
+    <Content Include="ExternalLoginJS\googleLogin.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Google.html" />
     <Content Include="Images\Custom-Software-Development.jpg" />
     <Content Include="Images\default-150x150.png" />
     <Content Include="Images\img1.jpg" />
@@ -5040,6 +5053,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Dashboard\Index.cshtml" />
+    <Content Include="Views\Account\GoogleLogin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -5057,6 +5071,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202209201008344_currencyAdded.resx">
       <DependentUpon>202209201008344_currencyAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202210150624388_dailyprofit field added.resx">
+      <DependentUpon>202210150624388_dailyprofit field added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202210150626326_minor-changes.resx">
+      <DependentUpon>202210150626326_minor-changes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
