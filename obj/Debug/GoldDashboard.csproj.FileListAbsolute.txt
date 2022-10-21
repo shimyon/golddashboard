@@ -507,6 +507,7 @@ D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Microsoft
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Microsoft.Owin.Host.SystemWeb.dll
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Microsoft.Owin.Security.Cookies.dll
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Microsoft.Owin.Security.dll
+D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Microsoft.Owin.Security.Google.dll
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Microsoft.Owin.Security.OAuth.dll
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Microsoft.Web.Infrastructure.dll
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Microsoft.Win32.Registry.dll
@@ -623,6 +624,7 @@ D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Microsoft
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Microsoft.Owin.Host.SystemWeb.xml
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Microsoft.Owin.Security.xml
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Microsoft.Owin.Security.Cookies.xml
+D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Microsoft.Owin.Security.Google.xml
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Microsoft.Owin.Security.OAuth.xml
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\MySql.Data.xml
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\MySql.Data.EntityFramework.xml
@@ -649,12 +651,18 @@ D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\System.We
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\System.Web.WebPages.Deployment.xml
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\System.Web.WebPages.Razor.xml
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\obj\Debug\GoldDashboard.Migrations.extraprofitfield.resources
+D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\obj\Debug\GoldDashboard.Migrations.goldusername.resources
+D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\obj\Debug\GoldDashboard.Migrations.currencyAdded.resources
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\obj\Debug\GoldDashboard.csproj.GenerateResource.cache
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\obj\Debug\GoldDashboard.csproj.CoreCompileInputs.cache
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\obj\Debug\GoldDashboard.csproj.CopyComplete
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\obj\Debug\GoldDashboard.dll
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\obj\Debug\GoldDashboard.pdb
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\obj\Debug\GoldDashboard.csproj.AssemblyReference.cache
+<<<<<<< HEAD
+D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\obj\Debug\GoldDashboard.Migrations.dailyprofitfieldadded.resources
+D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\obj\Debug\GoldDashboard.Migrations.minorchanges.resources
+=======
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\obj\Debug\GoldDashboard.Migrations.goldusername.resources
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\obj\Debug\GoldDashboard.Migrations.currencyAdded.resources
 C:\Projects\NDSir\golddashboard\obj\Debug\GoldDashboard.Migrations.extraprofitfield.resources
@@ -679,3 +687,4 @@ C:\Projects\NDSir\golddashboard\obj\Debug\GoldDashboard.csproj.CopyComplete
 C:\Projects\NDSir\golddashboard\obj\Debug\GoldDashboard.dll
 C:\Projects\NDSir\golddashboard\obj\Debug\GoldDashboard.pdb
 C:\Projects\NDSir\golddashboard\obj\Debug\GoldDashboard.csproj.AssemblyReference.cache
+>>>>>>> c8587e38e8e31a1c6c0e29e17c67ed52161be90b

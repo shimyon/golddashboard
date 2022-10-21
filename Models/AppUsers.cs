@@ -35,6 +35,9 @@ namespace GoldDashboard.Models
             }
         }
 
+        public decimal DailyProfit { get; set; }
+        public decimal Percent { get; set; }
+
         [NotMapped]
         public decimal USD_Rate { get; set; }
 

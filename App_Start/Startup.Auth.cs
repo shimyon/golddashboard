@@ -8,19 +8,36 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-
-
+using Microsoft.Owin.Security.Google;
+using Microsoft.Owin.Security.OAuth;
 
 namespace GoldDashboard
 {
     
     public partial class Startup
     {
-        
+        //static Startup()
+        //{
+        //    PublicClientId = "web";
+
+        //    OAuthOptions = new OAuthAuthorizationServerOptions
+        //    {
+        //        TokenEndpointPath = new PathString("/Token"),
+        //        AuthorizeEndpointPath = new PathString("/Account/Login/"),
+        //        //Provider = new ApplicationOAuthProvider(PublicClientId),
+        //        AccessTokenExpireTimeSpan = TimeSpan.FromDays(14),
+        //        AllowInsecureHttp = true
+        //    };
+        //}
+
+        //public static OAuthAuthorizationServerOptions OAuthOptions { get; private set; }
+
+        //public static string PublicClientId { get; private set; }
+
         // For more information on configuring authentication, please visit https://go.microsoft.com/fwlink/?LinkId=301864
         public void ConfigureAuth(IAppBuilder app)
         {
-          
+           
             // Configure the db context, user manager and signin manager to use a single instance per request
             app.CreatePerOwinContext(AppDb.Create);
             app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
@@ -34,7 +51,7 @@ namespace GoldDashboard
             app.UseCookieAuthentication(new CookieAuthenticationOptions
             {
                 AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
-                LoginPath = new PathString("/Account/Login"),
+                LoginPath = new PathString("/Account/Login/"),
                 Provider = new CookieAuthenticationProvider
                 {
                     // Enables the application to validate the security stamp when the user logs in.
@@ -67,11 +84,11 @@ namespace GoldDashboard
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "316015609224-ds36bvha8tvelec9k4i6654ibgaacd1i.apps.googleusercontent.com",
+                ClientSecret = "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"
+            });
         }
     }
 }
