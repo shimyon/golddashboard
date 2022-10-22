@@ -27,6 +27,9 @@ namespace GoldDashboard.Models
         public decimal PerWeekProfit { get; set; }
         public decimal PerMonthProfit { get; set; }
         public DateTime? DepositDate { get; set; }
+        public string ReferralPersonId { get; set; }
+        public bool IsReferralAdded { get; set; }
+
         public string DepositDateStr
         {
             get
@@ -37,6 +40,7 @@ namespace GoldDashboard.Models
 
         public decimal DailyProfit { get; set; }
         public decimal Percent { get; set; }
+        public bool IsActive { get; set; }
 
         [NotMapped]
         public decimal USD_Rate { get; set; }
@@ -106,7 +110,8 @@ namespace GoldDashboard.Models
         {
             get
             {
-                return Math.Round((ConvertedBalance - ConvertedDeposit) / TotalWorkignDay, 2);
+
+                return Math.Round((Balance - Deposit) / TotalWorkignDay, 2);
             }
         }
         [NotMapped]
@@ -114,7 +119,7 @@ namespace GoldDashboard.Models
         {
             get
             {
-                return Math.Round((ConvertedBalance - ConvertedDeposit) / (TotalWorkignDay / 7), 2);
+                return Math.Round((Balance - Deposit) / (TotalWorkignDay / 7), 2);
             }
         }
         [NotMapped]
@@ -122,16 +127,17 @@ namespace GoldDashboard.Models
         {
             get
             {
-                return Math.Round((ConvertedBalance - ConvertedDeposit), 2);
+                return Math.Round((Balance - Deposit), 2);
             }
         }
 
         [NotMapped]
         public decimal PercentProfit
         {
+            
             get
             {
-                return Math.Round((ConvertedBalance - ConvertedDeposit) / ConvertedDeposit * 100, 2);
+                return  Math.Round((Balance - Deposit) / Deposit * 100, 2);
             }
         }
 

@@ -15,7 +15,12 @@ namespace GoldDashboard.ViewModels
         public string Email { get; set; }
 
         [Required]
-        [Display(Name = "Gold UserName")]
+        public string Phone { get; set; }
+
+        public DateTime DepositDate { get; set; }
+        public decimal Percent { get; set; }
+        public bool isActive { get; set; }
+        public string ReferralPerson { get; set; }
         public string GoldUserUserName { get; set; }
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
@@ -28,6 +33,7 @@ namespace GoldDashboard.ViewModels
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
 
         public string ConfirmPassword { get; set; }
+
         public int GoldUserId { get; set; }
         public decimal Balance { get; set; }
         public decimal Deposit { get; set; }

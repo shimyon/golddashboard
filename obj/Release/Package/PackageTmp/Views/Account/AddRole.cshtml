@@ -1,0 +1,480 @@
+﻿@using GoldDashboard.ViewModels
+@model AddRoleViewModel
+
+<style>
+
+    #waitLoading {
+        position: absolute;
+        top: 50%;
+        right: 60%;
+        transform: translate(0, -50%);
+        padding: 10px;
+    }
+
+    .overlay {
+        display: none;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 999;
+        background: rgba(255,255,255,0.8) url("loader.gif") center no-repeat;
+    }
+    /* Turn off scrollbar when body element has the loading class */
+    body.loading {
+        overflow: hidden;
+    }
+        /* Make spinner image visible when body element has the loading class */
+        body.loading .overlay {
+            display: block;
+        }
+
+    .custom-control-input:checked ~ .custom-control-label::before {
+        border-color: forestgreen;
+        background-color: forestgreen;
+    }
+
+    #RoleData {
+        display: none;
+    }
+
+    #UserRoleList {
+        display: none;
+    }
+
+    .btn {
+        cursor: pointer !important;
+        pointer-events: auto;
+    }
+
+    td.details-control {
+        background: url('https://datatables.net/examples/resources/details_open.png') no-repeat center center;
+        cursor: pointer;
+    }
+
+    tr.shown td.details-control {
+        background: url('https://datatables.net/examples/resources/details_close.png') no-repeat center center;
+    }
+
+    .float-container {
+        padding: 5px;
+    }
+
+    .float-child {
+        width: 50%;
+        float: left;
+        padding: 5px;
+    }
+
+    .tableCard {
+        display: none;
+    }
+
+    #leftbox {
+        float: left;
+        width: 50%;
+    }
+
+    #middlebox {
+        float: left;
+        width: 15%;
+        margin-top: 30px;
+    }
+
+
+    table.dataTable {
+        width: 60%;
+    }
+
+    .blurry {
+        filter: blur(1px);
+    }
+
+    #childtable {
+        border-color: green !important;
+    }
+</style>
+<div class="row">
+    <div class="col-12 col-xl-5">
+        <div id="boxes">
+
+            <div id="leftbox">
+                <div class="form-group">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.RoleName, new { @class = "control-label" })
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(m => m.RoleName, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.RoleName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div id="middlebox">
+                <div class="form-group">
+                    <div class="form-group">
+                        <button type="button" id="AddRole" class="form-control btn btn-outline-success rounded">Add</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+
+
+        <div class="card card-primary tableCard">
+
+            <div class="card-body">
+
+                <table id="RoleData" class="table table-bordered table-hover ReportTbl">
+                    <thead>
+                        <tr>
+                            <th>Users</th>
+                            <th>Id</th>
+                            <th>Role Name</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+
+                </table>
+            </div>
+
+
+        </div>
+
+
+
+
+    </div>
+</div>
+
+
+<div class="modal fade bd-example-modal-lg" id="UserList" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add User to <b><span id="RoleUniqName"></span></b> Role</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="roleIdName" value="roleIdName">
+
+
+                <div class="card card-primary UserRoleList">
+
+                    <div class="card-body">
+
+                        <table id="UserInRoleList" class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>User Id</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="userListTbody">
+                            </tbody>
+
+                        </table>
+                    </div>
+
+
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="AddUserRoleData()">Save changes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="waitLoading" style="display:none">
+    <img style="height:100px; width:100px" src="~/Images/loading-buffering.gif" />
+</div>
+
+<div class="overlay"></div>
+
+@section scripts{
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
+    <script>
+
+
+
+        // Add remove loading class on body element based on Ajax request status
+        //$(document).on({
+        //    ajaxStart: function () {
+        //        $("#waitLoading").show();
+        //        $("body").addClass("loading");
+        //    },
+        //    ajaxStop: function () {
+        //        $("#waitLoading").hide();
+        //        $("body").removeClass("loading");
+        //    }
+        //});
+
+        var table;
+        function format(d) {
+
+            var result = '<table id="childtable" cellpadding="5" cellspacing="0" style="padding-left: 50px; margin-left:7%; width:80% ">' +
+                '<tr><td><b>TradingSymbol</b></td>';
+            //loop thouth the OderListDetails and add the child items.
+            for (var i = 0; i < d.childRow.length; i++) {
+                var child = '<tr><td>' + d.childRow[i].Users.UserId + '</td>' +
+                    '</tr >';
+                result += child;
+            }
+            result += '</table>';
+            debugger
+            return result;
+        }
+        $(document).ready(function () {
+
+            getRoleList();
+        })
+
+        function getRoleList() {
+            debugger
+            $.ajax({
+                url: "/Account/GetRoleList",
+                type: "get",
+                success: function (data) {
+                    debugger
+                    $(".tableCard").show();
+                    $("#RoleName").val('');
+                    $("#RoleData").show();
+                    $('#RoleData').DataTable().clear().destroy();
+                    table = $('#RoleData').DataTable({
+                        "paging": true,
+                        "lengthChange": true,
+                        "searching": true,
+                        "ordering": true,
+                        "info": true,
+                        "autoWidth": false,
+                        "responsive": true,
+                        "pageLength": -1,
+                        "lengthMenu": [[-1, 10, 25, 50, 100], ["All", 10, 25, 50, 100]],
+                        "deferLoading": 600,
+                        "aaData": data,
+                        "columns": [
+                            {
+                                "className": 'details-control',
+                                "orderable": false,
+                                "data": null,
+                                "defaultContent": '',
+                                "visible": false
+                            },
+                            { "data": "Id", "visible": false },
+                            { "data": "Name" },
+                            {
+                                "data": null, "sortable": false,
+                                render: function (data, type, row) {
+
+                                    return "<input type='button' id='AddUser' class='btn btn-outline-success' onclick='AddUserToRole(\"" + data.Name + "\")' value='Add Remove User' />";
+                                }
+                            },
+                            {
+                                "data": null, "sortable": false,
+                                render: function (data, type, row) {
+
+                                    return "<input type='button' id='" + (row.Id) + "' class='btn btn-outline-danger' onclick='DeleteRole(\"" + data.Id + "\")' value='Delete' />";
+                                }
+                            }
+
+                        ],
+                        "order": [[1, 'asc']],
+                    });
+
+                    $('#RoleData tbody').on('click', 'td.details-control', function () {
+                        debugger
+                        var tr = $(this).closest('tr');
+                        var row = table.row(tr);
+                        if (row.child.isShown()) {
+                            // This row is already open - close it
+                            row.child.hide();
+                            tr.removeClass('shown');
+                        }
+                        else {
+                            // Open this row
+                            row.child(format(row.data())).show();
+                            tr.addClass('shown');
+                        }
+                    });
+
+
+                }
+
+            });
+
+
+        }
+
+        function AddUserRoleData() {
+            var emailNotInList = [];
+            var emailList = [];
+            var roleName = $("#roleIdName").val();
+            debugger
+            $('#UserInRoleList tr').each(function () {
+                //processing this row
+                //how to process each cell(table td) where there is checkbox
+                $(this).find('td input:checked').each(function () {
+                    var email = $(this).attr('id');
+                    emailList.push(email);
+                });
+                $(this).find('td input:not(:checked)').each(function () {
+                    var notInRole = $(this).attr('id');
+                    emailNotInList.push(notInRole);
+                });
+            });
+            var model =
+            {
+                "RoleName": roleName,
+                "UserList": emailList,
+                "RemoveUserFromRoleList": emailNotInList
+            }
+
+            $.ajax({
+                url: "/Account/AddUserToRole",
+                type: "post",
+                data: { "addUserList": model },
+                success: function (data) {
+                    debugger
+                    if (data == "Added") {
+                        alert("role deleted successfully");
+                        $("#UserList").modal('hide');
+                        window.location.reload();
+                    }
+
+                }
+
+            });
+
+        }
+
+        function AddUserToRole(name) {
+            debugger
+            $.ajax({
+                'url': "/Account/GetUserList",
+                'method': "GET",
+                'contentType': 'application/json',
+                'data': { "name": name }
+            }).done(function (data) {
+
+                debugger
+                $('#UserInRoleList').DataTable().clear().destroy();
+                $('#UserInRoleList').dataTable({
+                    "paging": true,
+                    "lengthChange": true,
+                    "searching": true,
+                    "ordering": true,
+                    "info": true,
+                    "autoWidth": false,
+                    "responsive": true,
+                    "pageLength": -1,
+                    "lengthMenu": [[-1, 10, 25, 50, 100], ["All", 10, 25, 50, 100]],
+                    "aaData": data,
+                    "columns": [
+                        { "data": "Email" },
+                        {
+                            "data": null, "className": "text-center", render: function (data, type, row) {
+                                if (data.IsInRole == true) {
+                                    return "<div class='custom-control custom-switch'>" +
+                                        "<input type='checkbox' class='custom-control-input ToggleCheckBox' value='' id='" + data.Email + "' checked/>" +
+                                        "<label class='custom-control-label'  for='" + data.Email + "'</label></div>"
+
+                                } else {
+                                    return "<div class='custom-control custom-switch'>" +
+                                        "<input type='checkbox' class='custom-control-input ToggleCheckBox' value='' id='" + data.Email + "'/>" +
+                                        "<label class='custom-control-label'  for='" + data.Email + "'</label></div>"
+                                }
+
+                            }
+                        },
+                    ],
+
+                });
+            });
+
+            $("#RoleUniqName").text(name);
+            $("#roleIdName").val(name);
+            $("#UserList").modal('show');
+        }
+
+
+        function DeleteRole(id) {
+            $.ajax({
+                url: "/Account/DeleteRole",
+                type: "post",
+                data: { "roleId": id },
+                success: function (data) {
+
+                    if (data == "Deleted") {
+                        alert("role deleted successfully");
+                        window.location.reload();
+                    } else
+                    {
+                        alert("role can not deleted");
+                        window.location.reload();
+                    }
+                }
+
+            });
+        }
+
+        $('#AddRole').on('click', function () {
+            debugger
+            var isValid = true;
+            var roleName = $("#RoleName").val();
+
+            if (roleName == '') {
+                isValid = false;
+            }
+
+            if (isValid) {
+                $.ajax({
+                    url: "/Account/AddRole",
+                    type: "post",
+                    data: { "RoleName": roleName },
+                    success: function (data) {
+                        debugger
+                        if (data == "Added") {
+                            alert("role added successfully");
+                            window.location.reload();
+                        }
+
+                    }
+
+                });
+
+
+
+            } else {
+                alert("please insert role name");
+            }
+
+
+
+
+
+        });
+
+
+
+
+    </script>
+
+}
