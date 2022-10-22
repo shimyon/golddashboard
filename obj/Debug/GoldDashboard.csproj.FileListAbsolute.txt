@@ -663,8 +663,6 @@ D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\obj\Debug\Gol
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\obj\Debug\GoldDashboard.Migrations.dailyprofitfieldadded.resources
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\obj\Debug\GoldDashboard.Migrations.minorchanges.resources
 =======
-D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\obj\Debug\GoldDashboard.Migrations.goldusername.resources
-D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\obj\Debug\GoldDashboard.Migrations.currencyAdded.resources
 C:\Projects\NDSir\golddashboard\obj\Debug\GoldDashboard.Migrations.extraprofitfield.resources
 C:\Projects\NDSir\golddashboard\obj\Debug\GoldDashboard.Migrations.goldusername.resources
 C:\Projects\NDSir\golddashboard\obj\Debug\GoldDashboard.Migrations.currencyAdded.resources
@@ -688,3 +686,6 @@ C:\Projects\NDSir\golddashboard\obj\Debug\GoldDashboard.dll
 C:\Projects\NDSir\golddashboard\obj\Debug\GoldDashboard.pdb
 C:\Projects\NDSir\golddashboard\obj\Debug\GoldDashboard.csproj.AssemblyReference.cache
 >>>>>>> c8587e38e8e31a1c6c0e29e17c67ed52161be90b
+C:\Projects\NDSir\golddashboard\bin\Microsoft.Owin.Security.Google.xml
+C:\Projects\NDSir\golddashboard\obj\Debug\GoldDashboard.Migrations.dailyprofitfieldadded.resources
+C:\Projects\NDSir\golddashboard\obj\Debug\GoldDashboard.Migrations.minorchanges.resources
