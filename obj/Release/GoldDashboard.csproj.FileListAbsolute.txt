@@ -97,8 +97,6 @@ D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Microsoft
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Microsoft.AspNetCore.WebUtilities.dll
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Microsoft.Bcl.AsyncInterfaces.dll
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Microsoft.Bcl.HashCode.dll
-D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Microsoft.CodeAnalysis.CSharp.dll
-D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Microsoft.CodeAnalysis.dll
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Microsoft.CodeAnalysis.Razor.dll
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Microsoft.DotNet.PlatformAbstractions.dll
@@ -130,15 +128,18 @@ D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Microsoft
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Microsoft.Owin.Host.SystemWeb.dll
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Microsoft.Owin.Security.Cookies.dll
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Microsoft.Owin.Security.dll
+D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Microsoft.Owin.Security.Google.dll
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Microsoft.Owin.Security.OAuth.dll
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Microsoft.Web.Infrastructure.dll
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Microsoft.Win32.Registry.dll
+D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\mscorlib.Polyfill.NET40.dll
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\MySql.Data.dll
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\MySql.Data.EntityFramework.dll
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\MySql.Data.EntityFrameworkCore.dll
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Newtonsoft.Json.Bson.dll
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Newtonsoft.Json.dll
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Owin.dll
+D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Polyfill.System.Runtime.InteropServices.RuntimeInformation.NET40.dll
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\System.Buffers.dll
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\System.Collections.Immutable.dll
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\System.ComponentModel.Annotations.dll
@@ -167,6 +168,7 @@ D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\System.We
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Ubiety.Dns.Core.dll
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\WebGrease.dll
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\ZstdNet.dll
+D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Antlr3.Runtime.pdb
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\BouncyCastle.Crypto.xml
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\EntityFramework.xml
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\EntityFramework.SqlServer.xml
@@ -212,11 +214,8 @@ D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Microsoft
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Microsoft.AspNetCore.WebUtilities.xml
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Microsoft.Bcl.AsyncInterfaces.xml
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Microsoft.Bcl.HashCode.xml
-D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Microsoft.CodeAnalysis.pdb
-D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Microsoft.CodeAnalysis.xml
-D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Microsoft.CodeAnalysis.CSharp.pdb
-D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Microsoft.CodeAnalysis.CSharp.xml
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Microsoft.CodeAnalysis.Razor.xml
+D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Microsoft.EntityFrameworkCore.xml
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Microsoft.EntityFrameworkCore.Abstractions.xml
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Microsoft.EntityFrameworkCore.Relational.xml
@@ -244,61 +243,46 @@ D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Microsoft
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Microsoft.Owin.Host.SystemWeb.xml
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Microsoft.Owin.Security.xml
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Microsoft.Owin.Security.Cookies.xml
+D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Microsoft.Owin.Security.Google.xml
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Microsoft.Owin.Security.OAuth.xml
+D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\mscorlib.Polyfill.NET40.xml
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\MySql.Data.xml
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\MySql.Data.EntityFramework.xml
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\MySql.Data.EntityFrameworkCore.xml
+D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Newtonsoft.Json.xml
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Newtonsoft.Json.Bson.xml
+D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Polyfill.System.Runtime.InteropServices.RuntimeInformation.NET40.xml
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\System.Buffers.xml
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\System.Collections.Immutable.xml
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\System.Diagnostics.DiagnosticSource.xml
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\System.Memory.xml
+D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\System.Net.Http.Formatting.xml
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\System.Numerics.Vectors.xml
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\System.Reflection.Metadata.xml
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\System.Runtime.CompilerServices.Unsafe.xml
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\System.Text.Encodings.Web.xml
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\System.Threading.Tasks.Extensions.xml
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\System.Web.Helpers.xml
+D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\System.Web.Http.xml
+D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\System.Web.Http.WebHost.xml
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\System.Web.Mvc.xml
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\System.Web.Optimization.xml
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\System.Web.Razor.xml
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\System.Web.WebPages.xml
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\System.Web.WebPages.Deployment.xml
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\System.Web.WebPages.Razor.xml
-D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Newtonsoft.Json.xml
-D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Antlr3.Runtime.pdb
-D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\System.Net.Http.Formatting.xml
-D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\System.Web.Http.xml
-D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\System.Web.Http.WebHost.xml
-D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\obj\Release\GoldDashboard.csproj.AssemblyReference.cache
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\obj\Release\GoldDashboard.Migrations.extraprofitfield.resources
+D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\obj\Release\GoldDashboard.Migrations.goldusername.resources
+D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\obj\Release\GoldDashboard.Migrations.currencyAdded.resources
+D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\obj\Release\GoldDashboard.Migrations.dailyprofitfieldadded.resources
+D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\obj\Release\GoldDashboard.Migrations.minorchanges.resources
+D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\obj\Release\GoldDashboard.Migrations.isActive.resources
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\obj\Release\GoldDashboard.csproj.GenerateResource.cache
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\obj\Release\GoldDashboard.csproj.CoreCompileInputs.cache
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\obj\Release\GoldDashboard.csproj.CopyComplete
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\obj\Release\GoldDashboard.dll
 D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\obj\Release\GoldDashboard.pdb
-D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\obj\Release\GoldDashboard.Migrations.goldusername.resources
-D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\obj\Release\GoldDashboard.Migrations.currencyAdded.resources
-C:\Projects\NDSir\golddashboard\bin\GoldDashboard.dll.config
-C:\Projects\NDSir\golddashboard\bin\GoldDashboard.dll
-C:\Projects\NDSir\golddashboard\bin\GoldDashboard.pdb
-C:\Projects\NDSir\golddashboard\bin\Microsoft.Bcl.AsyncInterfaces.dll
-C:\Projects\NDSir\golddashboard\bin\mscorlib.Polyfill.NET40.dll
-C:\Projects\NDSir\golddashboard\bin\Polyfill.System.Runtime.InteropServices.RuntimeInformation.NET40.dll
-C:\Projects\NDSir\golddashboard\bin\System.Buffers.dll
-C:\Projects\NDSir\golddashboard\bin\System.Memory.dll
-C:\Projects\NDSir\golddashboard\bin\System.Numerics.Vectors.dll
-C:\Projects\NDSir\golddashboard\bin\System.Runtime.CompilerServices.Unsafe.dll
-C:\Projects\NDSir\golddashboard\bin\System.Threading.Tasks.Extensions.dll
-C:\Projects\NDSir\golddashboard\bin\mscorlib.Polyfill.NET40.xml
-C:\Projects\NDSir\golddashboard\bin\Polyfill.System.Runtime.InteropServices.RuntimeInformation.NET40.xml
-C:\Projects\NDSir\golddashboard\obj\Release\GoldDashboard.csproj.AssemblyReference.cache
-C:\Projects\NDSir\golddashboard\obj\Release\GoldDashboard.Migrations.extraprofitfield.resources
-C:\Projects\NDSir\golddashboard\obj\Release\GoldDashboard.Migrations.goldusername.resources
-C:\Projects\NDSir\golddashboard\obj\Release\GoldDashboard.Migrations.currencyAdded.resources
-C:\Projects\NDSir\golddashboard\obj\Release\GoldDashboard.csproj.GenerateResource.cache
-C:\Projects\NDSir\golddashboard\obj\Release\GoldDashboard.csproj.CoreCompileInputs.cache
-C:\Projects\NDSir\golddashboard\obj\Release\GoldDashboard.csproj.CopyComplete
-C:\Projects\NDSir\golddashboard\obj\Release\GoldDashboard.dll
-C:\Projects\NDSir\golddashboard\obj\Release\GoldDashboard.pdb
+D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\obj\Release\GoldDashboard.Migrations.referral.resources
+D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\obj\Release\GoldDashboard.Migrations.referralchange.resources
+D:\project\backup - Copy\AngelOneAdmin\AngelOneAdmin\GoldDashboard\obj\Release\GoldDashboard.Migrations.isadded.resources

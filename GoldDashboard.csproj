@@ -555,6 +555,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -581,14 +582,36 @@
     <Compile Include="Migrations\202210150626326_minor-changes.Designer.cs">
       <DependentUpon>202210150626326_minor-changes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202210170543072_isActive.cs" />
+    <Compile Include="Migrations\202210170543072_isActive.Designer.cs">
+      <DependentUpon>202210170543072_isActive.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202210190631337_referral.cs" />
+    <Compile Include="Migrations\202210190631337_referral.Designer.cs">
+      <DependentUpon>202210190631337_referral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202210190655132_referralchange.cs" />
+    <Compile Include="Migrations\202210190655132_referralchange.Designer.cs">
+      <DependentUpon>202210190655132_referralchange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202210191104586_isadded.cs" />
+    <Compile Include="Migrations\202210191104586_isadded.Designer.cs">
+      <DependentUpon>202210191104586_isadded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppDb.cs" />
     <Compile Include="Models\AppUsers.cs" />
     <Compile Include="Models\Currency.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\AddDataViewModel.cs" />
+    <Compile Include="ViewModels\AddRoleViewModel.cs" />
+    <Compile Include="ViewModels\AddUserToRoleViewModel.cs" />
+    <Compile Include="ViewModels\GiveReferralMoneyViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\referralListBoxVeiwModel.cs" />
     <Compile Include="ViewModels\RegisterViewModel.cs" />
+    <Compile Include="ViewModels\UserInRoleViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="AdminKit\build\config\postcss.config.js" />
@@ -2764,7 +2787,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Google.html" />
     <Content Include="Images\Custom-Software-Development.jpg" />
     <Content Include="Images\default-150x150.png" />
     <Content Include="Images\img1.jpg" />
@@ -5059,11 +5081,14 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Dashboard\Index.cshtml" />
-    <Content Include="Views\Account\GoogleLogin.cshtml" />
+    <Content Include="Views\Account\AddRole.cshtml" />
+    <Content Include="Views\Account\AddData.cshtml" />
+    <Content Include="Views\Client\Index.cshtml" />
+    <Content Include="Views\Shared\_AspUser.cshtml" />
+    <Content Include="Views\Client\AddReferral.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Account2\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
@@ -5083,6 +5108,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202210150626326_minor-changes.resx">
       <DependentUpon>202210150626326_minor-changes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202210170543072_isActive.resx">
+      <DependentUpon>202210170543072_isActive.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202210190631337_referral.resx">
+      <DependentUpon>202210190631337_referral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202210190655132_referralchange.resx">
+      <DependentUpon>202210190655132_referralchange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202210191104586_isadded.resx">
+      <DependentUpon>202210191104586_isadded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

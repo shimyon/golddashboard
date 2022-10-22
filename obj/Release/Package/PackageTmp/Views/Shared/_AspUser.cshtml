@@ -1,0 +1,68 @@
+﻿@model GoldDashboard.ViewModels.RegisterViewModel
+
+
+@using (Html.BeginForm())
+{
+<div class="form-group">
+    @Html.LabelFor(x => x.GoldUserId)
+    @Html.EditorFor(x => x.GoldUserId)
+    @Html.ValidationMessageFor(x => x.GoldUserId)
+</div>
+ 
+   
+<div class="form-group">
+    @Html.LabelFor(x => x.GoldUserUserName)
+    @Html.EditorFor(x => x.GoldUserUserName)
+    @Html.ValidationMessageFor(x => x.GoldUserUserName)
+</div>
+<div class="form-group">
+    @Html.LabelFor(x => x.Balance)
+    @Html.EditorFor(x => x.Balance)
+    @Html.ValidationMessageFor(x => x.Balance)
+</div>
+<div class="form-group">
+    @Html.LabelFor(x => x.Deposit)
+    @Html.EditorFor(x => x.Deposit)
+    @Html.ValidationMessageFor(x => x.Deposit)
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(x => x.Email)
+    @Html.EditorFor(x => x.Email)
+    @Html.ValidationMessageFor(x => x.Email)
+</div>
+<div class="form-group">
+    @Html.LabelFor(x => x.Password)
+    @Html.EditorFor(x => x.Password)
+    @Html.ValidationMessageFor(x => x.Password)
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(x => x.ConfirmPassword)
+    @Html.EditorFor(x => x.ConfirmPassword)
+    @Html.ValidationMessageFor(x => x.ConfirmPassword)
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(x => x.Phone)
+    @Html.EditorFor(x => x.Phone)
+    @Html.ValidationMessageFor(x => x.Phone)
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(x => x.DepositDate)
+    @Html.EditorFor(x => x.DepositDate)
+    @Html.ValidationMessageFor(x => x.DepositDate)
+</div>
+<div class="form-group">
+    @Html.LabelFor(x => x.Percent)
+    @Html.EditorFor(x => x.Percent)
+    @Html.ValidationMessageFor(x => x.Percent)
+</div>
+<div class="form-group form-check">
+    @Html.LabelFor(x => x.isActive)
+    @Html.EditorFor(x => x.isActive)
+    @Html.ValidationMessageFor(x => x.isActive)
+</div>
+
+}

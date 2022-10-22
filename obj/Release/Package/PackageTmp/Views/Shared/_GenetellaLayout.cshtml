@@ -286,7 +286,7 @@
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
-                        with font-awesome or any other icon font library -->
+    with font-awesome or any other icon font library -->
                         <li class="nav-item menu-open">
                             <a href="~/Dashboard/Index" class="nav-link active">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -296,37 +296,11 @@
                             </a>
 
                         </li>
-
-                        @*<li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="nav-icon fas fa-copy"></i>
-                                    <p>
-                                        Trading
-                                        <i class="fas fa-angle-left right"></i>
-                                        <span class="badge badge-info right">2</span>
-                                    </p>
-                                </a>
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="~/Trading/Index" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Manual Trading</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="~/Trading/GetTradeBook" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Trade Book</p>
-                                        </a>
-                                    </li>
-
-                                </ul>
-                            </li>
-
-
+                        @if (User.IsInRole("Admin"))
+                        {
                             <li class="nav-item">
                                 <a href="#" class="nav-link">
-                                    <i class="nav-icon fas fa-edit"></i>
+                                    <i class="nav-icon fas fa-copy"></i>
                                     <p>
                                         Manage User
                                         <i class="fas fa-angle-left right"></i>
@@ -335,96 +309,213 @@
                                 </a>
                                 <ul class="nav nav-treeview">
                                     <li class="nav-item">
-                                        <a href="~/Trading/UserList" class="nav-link">
+                                        <a href="~/Client/Index" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
-                                            <p>Users Detail</p>
+                                            <p>Get User List</p>
                                         </a>
                                     </li>
 
                                 </ul>
                             </li>
-                            <li class="nav-item">
-                                <a href="~/Account/AddRole" class="nav-link">
-                                    <i class="nav-icon fas fa-tachometer-alt"></i>
-                                    <p>
-                                        Manage Roles
-                                    </p>
-                                </a>
-
-                            </li>
-
-                            <li class="nav-item">
-                                <a href="~/Holiday/Index" class="nav-link">
-                                    <i class="nav-icon fa fa-calendar"></i>
-                                    <p>
-                                        Holidays
-                                    </p>
-                                </a>
-
-                            </li>
-
-                            <li class="nav-item">
-                                <a href="~/Report/Index" class="nav-link">
-                                    <i class="nav-icon fa fa-calendar"></i>
-                                    <p>
-                                        Get Reports
-                                    </p>
-                                </a>
-
-                            </li>
-
-
+                        }
+                        @if (User.IsInRole("Admin"))
+                        {
                             <li class="nav-item">
                                 <a href="#" class="nav-link">
-                                    <i class="nav-icon fas fa-chart-pie"></i>
+                                    <i class="nav-icon fas fa-copy"></i>
                                     <p>
-                                        Charts
-                                        <i class="right fas fa-angle-left"></i>
+                                        Manage Roles
+                                        <i class="fas fa-angle-left right"></i>
+                                        <span class="badge badge-info right">2</span>
                                     </p>
                                 </a>
                                 <ul class="nav nav-treeview">
                                     <li class="nav-item">
-                                        <a href="pages/charts/chartjs.html" class="nav-link">
+                                        <a href="~/Account/AddRole" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
-                                            <p>ChartJS</p>
+                                            <p>Add Role</p>
                                         </a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a href="pages/charts/flot.html" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Flot</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="pages/charts/inline.html" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Inline</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="pages/charts/uplot.html" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>uPlot</p>
-                                        </a>
-                                    </li>
+
                                 </ul>
-                            </li>*@
+                            </li>
+                        }
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="nav-icon fas fa-copy"></i>
+                                    <p>
+                                        Manage Your Data
+                                        <i class="fas fa-angle-left right"></i>
+                                        <span class="badge badge-info right">2</span>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="~/Account/AddData" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Add Data</p>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                        }
+
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="nav-icon fas fa-copy"></i>
+                                    <p>
+                                        Manage Referral
+                                        <i class="fas fa-angle-left right"></i>
+                                        <span class="badge badge-info right">2</span>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="~/Client/AddReferral" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Add Referral Data</p>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                        }
+
+
+                        @*<li class="nav-item">
+            <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-copy"></i>
+                <p>
+                    Trading
+                    <i class="fas fa-angle-left right"></i>
+                    <span class="badge badge-info right">2</span>
+                </p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="~/Trading/Index" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Manual Trading</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="~/Trading/GetTradeBook" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Trade Book</p>
+                    </a>
+                </li>
+
+            </ul>
+        </li>
+
+
+        <li class="nav-item">
+            <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-edit"></i>
+                <p>
+                    Manage User
+                    <i class="fas fa-angle-left right"></i>
+                    <span class="badge badge-info right">1</span>
+                </p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="~/Trading/UserList" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Users Detail</p>
+                    </a>
+                </li>
+
+            </ul>
+        </li>
+        <li class="nav-item">
+            <a href="~/Account/AddRole" class="nav-link">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p>
+                    Manage Roles
+                </p>
+            </a>
+
+        </li>
+
+        <li class="nav-item">
+            <a href="~/Holiday/Index" class="nav-link">
+                <i class="nav-icon fa fa-calendar"></i>
+                <p>
+                    Holidays
+                </p>
+            </a>
+
+        </li>
+
+        <li class="nav-item">
+            <a href="~/Report/Index" class="nav-link">
+                <i class="nav-icon fa fa-calendar"></i>
+                <p>
+                    Get Reports
+                </p>
+            </a>
+
+        </li>
+
+
+        <li class="nav-item">
+            <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-chart-pie"></i>
+                <p>
+                    Charts
+                    <i class="right fas fa-angle-left"></i>
+                </p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="pages/charts/chartjs.html" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>ChartJS</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="pages/charts/flot.html" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Flot</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="pages/charts/inline.html" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Inline</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="pages/charts/uplot.html" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>uPlot</p>
+                    </a>
+                </li>
+            </ul>
+        </li>*@
 
 
 
                         @*</ul>
-                            @if (Request.IsAuthenticated)
-                            {
-                                using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-                                {
-                                    @Html.AntiForgeryToken()
+        @if (Request.IsAuthenticated)
+        {
+            using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
 
-                                    <button type="submit" class="form-control btn btn-primary rounded submit px-3">Sign Out</button>
+                <button type="submit" class="form-control btn btn-primary rounded submit px-3">Sign Out</button>
 
 
-                                }
-                            }*@
-                </nav>
+            }
+        }*@
+                    </ul>
+</nav>
                 <!-- /.sidebar-menu -->
             </div>
             <!-- /.sidebar -->

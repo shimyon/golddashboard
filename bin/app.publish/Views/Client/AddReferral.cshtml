@@ -1,0 +1,158 @@
+﻿@{
+    ViewBag.Title = "Referral Page";
+    var listData = ViewBag.ReferralList;
+}
+<style>
+    #chkDiv {
+        margin-top: 15px;
+    }
+
+    .chkUser {
+        width: 30px;
+        height: 30px;
+    }
+    #percentDiv {
+        display:none;
+    }
+</style>
+<h1>Add Referaal Data</h1>
+<div class="row">
+    <div class="col-4">
+        <select class="form-select form-control" id="referralUser" aria-label="Default select example">
+            <option selected value="1">Select User</option>
+
+            @foreach (var item in listData)
+            {
+                <option value="@item.rUserId">@item.rUserName</option>
+            }
+
+
+        </select>
+
+    </div>
+
+
+</div>
+<br />
+<div class="row" id="percentDiv">
+    <div class="col-2 form-group" id="txtPercent">
+
+        
+    </div>
+
+</div>
+
+<div id="chkDiv" class="row">
+    <div class="col-4">
+        <div id="resultDiv" class="col-4">
+        </div>
+    </div>
+</div>
+<br />
+<div class="row" id="btnDiv">
+    <div class="col-2 form-group" id="btnSendDiv">
+
+
+    </div>
+
+</div>
+
+@section scripts
+{
+    <script>
+
+        function sendDataFunc()
+        {
+            var perncet = $("#percent").val();
+            var referralId = $("#referralUser option:selected").val();
+            var count = $("input[name=chkUserBox]:checked").length;
+            var id = [];
+          
+            $('input[name=chkUserBox]:checked').each(function () {
+                
+                    id.push(this.value);
+                
+            });
+            debugger
+            var model = {
+                "userId": referralId,
+                "Userpercent": perncet,
+                "count": count,
+                "refferedUserId":id
+               
+
+            }
+            $.ajax({
+                url: "/Client/GiveReferralMoney",
+                type: "post",
+                data: { "giveMoneyModel": model },
+                success: function (data) {
+                    if (data.success) {
+                        debugger
+                        alert("Monthly Profit added");
+                        $('#referralUser').val('1');
+                        $("#percentDiv").empty();
+                        $("#resultDiv").empty();
+                        $("#txtPercent").empty();
+                        $("#btnSendDiv").empty();
+                        $("#percentDiv").hide();
+                        $("#resultDiv").hide();
+                        $("#txtPercent").hide();
+                        $("#btnSendDiv").hide();
+
+                    } else
+                    {
+                        alert("Some Error occured");
+                    }
+                }
+
+            });
+            
+        }
+        $('#referralUser').on('change', function () {
+
+            var referralId = this.value;
+            if (referralId != 1) {
+                $("#percentDiv").show();
+                $("#resultDiv").show();
+                $("#txtPercent").show();
+                $("#btnSendDiv").show();
+            } else
+            {
+                $("#resultDiv").hide();
+                $("#txtPercent").hide();
+                $("#btnSendDiv").hide();
+            }
+            $.ajax({
+                url: "/Client/AddReferralData",
+                type: "post",
+                data: { "referralId": referralId },
+                success: function (data) {
+                    if (data.length == 0 ) {
+                        $("#resultDiv").empty();
+                        $("#txtPercent").empty();
+                        $("#btnSendDiv").empty();
+                        $("#resultDiv").hide();
+                        $("#txtPercent").hide();
+                        $("#btnSendDiv").hide();
+                        alert("No Data found");
+                    } else
+                    {
+                        $("#resultDiv").empty();
+                        $("#txtPercent").empty();
+                        $("#txtPercent").append("<label for='percent'>Add Percent</label><input type='text' class= 'form-control' id ='percent'>");
+                        $("#btnSendDiv").empty();
+                        $("#btnSendDiv").append("<button type='button' id='btnSend' onClick='sendDataFunc()' class='btn btn-outline-success'>Add</button>");
+                        $.each(data, function (i, record) {
+                            $("#resultDiv").append("<div class='form-check'><input class= 'form-check-input'  type='checkbox' name='chkUserBox' value = '" + record.Id + "' id = '" + record.Id + "'><label class='form-check-label' for='" + record.Id + "'>" + record.GoldUserName + "</label></div >");
+                        });
+                    }
+                    debugger
+                    
+                    
+                }
+
+            });
+        });
+    </script>
+}
