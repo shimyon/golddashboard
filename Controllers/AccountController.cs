@@ -89,7 +89,7 @@ namespace GoldDashboard.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new AppUsers {UserName=model.Email, Email = model.Email, GoldUserName=model.GoldUserUserName, GoldUserId=model.GoldUserId, Balance=model.Balance, Deposit=model.Deposit };
+                var user = new AppUsers { UserName = model.Email, Email = model.Email, GoldUserName = model.GoldUserUserName, GoldUserId = model.GoldUserId, Balance = model.Balance, Deposit = model.Deposit };
 
                 var result = await UserManager.CreateAsync(user, model.Password);
 
@@ -143,16 +143,17 @@ namespace GoldDashboard.Controllers
         public async Task<ActionResult> DeleteRole(string roleId)
         {
             var role = await AppRoleManager.FindByIdAsync(roleId);
-           var isDeleted = await AppRoleManager.DeleteAsync(role);
+            var isDeleted = await AppRoleManager.DeleteAsync(role);
             if (isDeleted.Succeeded == true)
             {
                 return Json("Deleted");
             }
-            else {
+            else
+            {
                 return Json("NotDeleted");
             }
 
-            
+
         }
 
         public async Task<ActionResult> AddUserToRole(AddUserToRoleViewModel addUserList)
@@ -206,6 +207,11 @@ namespace GoldDashboard.Controllers
         [HttpGet]
         public ActionResult Login(string returnUrl)
         {
+            if (returnUrl == "/Account/LogOff")
+            {
+                returnUrl = string.Empty;
+            }
+
             ViewBag.ReturnUrl = returnUrl;
             return View();
         }
@@ -251,16 +257,18 @@ namespace GoldDashboard.Controllers
 
         private ActionResult RedirectToLocal(string returnUrl)
         {
-          
+
             if (Url.IsLocalUrl(returnUrl))
             {
                 return Redirect(returnUrl);
             }
-            return RedirectToAction("Index", "Dashboard");
+            return Redirect("/Dashboard/Index");
+            //return RedirectToAction("Index", "Dashboard");
         }
 
         public ActionResult LogOff()
         {
+            ViewBag.ReturnUrl = "";
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
             return RedirectToAction("Login", "Account");
         }
@@ -278,7 +286,7 @@ namespace GoldDashboard.Controllers
 
         public void Authorize()
         {
-    
+
         }
         [HttpGet]
         public ActionResult AddData()
@@ -289,7 +297,7 @@ namespace GoldDashboard.Controllers
 
             //ViewBag.CurrentUserId = userId;
             var userContext = new AppDb();
-            var users =  userContext.Users.ToList();
+            var users = userContext.Users.ToList();
             return View(users);
         }
         [HttpPost]
@@ -309,7 +317,7 @@ namespace GoldDashboard.Controllers
             //{
             //    ViewBag.Message = "Data Update Successfully";
             //    return RedirectToAction("AddData", "Account");
-                
+
             //}
             if (result.Succeeded)
             {
@@ -328,13 +336,14 @@ namespace GoldDashboard.Controllers
         {
             string id = userId;
             var userContext = new AppDb();
-            var currentUser = userContext.Users.Where(u => u.Id == userId).FirstOrDefault(); 
+            var currentUser = userContext.Users.Where(u => u.Id == userId).FirstOrDefault();
 
             if (currentUser != null)
             {
                 return Json(currentUser);
             }
-            else {
+            else
+            {
                 return Json("User Not Fount");
             }
         }

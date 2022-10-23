@@ -19,5 +19,18 @@ namespace GoldDashboard
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
+        protected void Application_BeginRequest()
+        {
+            if (HttpContext.Current.Request.IsLocal)
+            {
+                //if (Context.Request.IsSecureConnection)
+                //    Response.Redirect(Context.Request.Url.ToString().Replace("https://localhost:44310/", "http://localhost:44310/"));
+            }
+            else
+            {
+                //Response.Redirect(Context.Request.Url.ToString().Replace("https://", "http://"));
+            }
+        }
+
     }
 }

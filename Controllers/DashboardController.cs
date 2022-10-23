@@ -10,7 +10,7 @@ using System.Web.Mvc;
 
 namespace GoldDashboard.Controllers
 {
-    [RequireHttps]
+    //[RequireHttps]
     [Authorize]
     public class DashboardController : Controller
     {
